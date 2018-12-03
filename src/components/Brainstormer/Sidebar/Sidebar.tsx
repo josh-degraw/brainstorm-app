@@ -10,6 +10,7 @@ export default function Sidebar(props: SidebarProps) {
             <ListGroup>
                 <SidebarButton onIconClick={props.onCustomIdeaClick}>Add Custom idea</SidebarButton>
                 <SidebarButton onIconClick={props.onAutoClick}>Add Auto-generated idea</SidebarButton>
+                <SidebarButton onIconClick={props.onConnectionClick}>Add Connection</SidebarButton>
             </ListGroup>
             <ListGroupItem>
                 <Form>
@@ -31,4 +32,5 @@ export default function Sidebar(props: SidebarProps) {
 export interface SidebarProps {
     onCustomIdeaClick(): void;
     onAutoClick(): void;
+    onConnectionClick: (() => void);
 }
