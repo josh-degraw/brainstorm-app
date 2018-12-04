@@ -30,7 +30,7 @@ type GraphState = {
     imageResults: googleFetcher.SearchResults | null;
 };
 
-const DEBOUNCE_MS = 1000;
+const DEBOUNCE_MS = 250;
 
 class Graph extends React.Component<GraphProps, GraphState> {
     constructor(props: GraphProps) {
