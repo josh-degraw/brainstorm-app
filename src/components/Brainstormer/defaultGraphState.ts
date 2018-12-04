@@ -8,7 +8,7 @@ import {
     POLY_TYPE,
 } from './graph-config';
 import { INode, IEdge } from 'react-digraph';
-import sampleGraph from "./sampleGraph.json";
+import sampleGraph from './sampleGraph.json';
 export type IGraph = {
     nodes: INode[];
     edges: IEdge[];

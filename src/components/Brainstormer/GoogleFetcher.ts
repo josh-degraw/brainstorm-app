@@ -18,7 +18,6 @@ const getSearchUri = (query: string) => {
 };
 
 async function makeRequest(url: string): Promise<any> {
-    return Promise.resolve(null); // Set to null to limit total queries until we're ready
     try {
         const r = await fetch(url);
         if (!r.ok) {

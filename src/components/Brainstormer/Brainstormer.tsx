@@ -3,7 +3,7 @@ import * as googleFetcher from './GoogleFetcher';
 import * as _ from 'lodash';
 
 import { GraphView, INode, IEdge } from 'react-digraph';
-import graphState from './defaultGraphState';
+import graphState, { IGraph } from './defaultGraphState';
 
 import GraphConfig, {
     EMPTY_EDGE_TYPE,
@@ -22,10 +22,7 @@ type GraphProps = {
 };
 
 type GraphState = {
-    graph: {
-        nodes: INode[];
-        edges: IEdge[];
-    };
+    graph: IGraph;
     selected: INode | IEdge | null;
     totalNodes: number;
 
@@ -33,7 +30,7 @@ type GraphState = {
     imageResults: googleFetcher.SearchResults | null;
 };
 
-const DEBOUNCE_MS = 50;
+const DEBOUNCE_MS = 1000;
 
 class Graph extends React.Component<GraphProps, GraphState> {
     constructor(props: GraphProps) {
