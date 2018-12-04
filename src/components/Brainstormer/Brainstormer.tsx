@@ -44,7 +44,7 @@ class Graph extends React.Component<GraphProps, GraphState> {
             imageResults: null,
         };
 
-        this.handleGoogleSearch = _.debounce(this.handleGoogleSearch.bind(this), DEBOUNCE_MS);
+        this.handleGoogleSearch = _.throttle(this.handleGoogleSearch.bind(this), DEBOUNCE_MS);
     }
 
     public readonly state: GraphState;
