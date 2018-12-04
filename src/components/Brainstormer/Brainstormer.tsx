@@ -226,7 +226,8 @@ class Graph extends React.Component<GraphProps, GraphState> {
             this.setState({ imageResults: null, searchResults: null });
         }
     }
-    render() {
+
+    public render() {
         const { nodes, edges } = this.state.graph;
         const selected = this.state.selected;
         const { NodeTypes, NodeSubtypes, EdgeTypes } = GraphConfig;
@@ -234,6 +235,8 @@ class Graph extends React.Component<GraphProps, GraphState> {
         return (
             <>
                 <Sidebar
+                    onFileUploaded={graph => this.setState({ graph })}
+                    onDataRequested={() => this.state.graph}
                     onCustomIdeaClick={this.addStartNode}
                     onAutoClick={this.addRandomNode}
                     onConnectionClick={() => this.onCreateEdge(nodes[nodes.length - 1], nodes[0])}
